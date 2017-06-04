@@ -9,6 +9,8 @@ function rout(path, y, x, z) {
 		file.serve(x, z);
 	}else if(path === '/about'){
 		z.end(index);
+	}else if(path === '/ng-admin'){
+		z.end(index);
 	}else{
 		file.serve(x, z);
 	}
