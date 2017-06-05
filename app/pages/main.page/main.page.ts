@@ -1,48 +1,23 @@
-import {Component} from '@angular/core'
+import {Component, OnInit} from '@angular/core';
+import { HttpService} from '../../services/http.service'
 
-const blo: any[] = [
-    	{
-    		"id": 1,
-    		"img": "img/Facebook-logo.jpg",
-            "title": "Водоподготовка для Facebook",
-            "text": "Компания EUROWATER поставила и установила станцию очистки воды для системы охлаждения датацентра Facebook в северной части Швеции. Нажмите, чтоб узнать больше о проекте..."
-    	},
-    	{
-            "id": 2,
-            "img": "img/Boiler_water.jpg",
-            "title": "Очистка питьевой воды",
-            "text": "Мы предлагаем готовые решения для очистки больших и малых расходов воды как для городских водоканалов так и для частных предприятий. Удаление железа, марганца, аммония и других загрязнений с воды."
-        },
-    	{
-            "id": 3,
-            "img": "img/glasvand.jpg",
-            "title": "Водоподготовка для Facebook",
-            "text": "Мы осуществили большой перечень проектов в сфере водоподготовки для различных видов промышленности, таких как: пищевая, пивоваренная, стекольная, гальваническая, металлургическая"
-        },
-        {
-            "id": 4,
-            "img": "img/Boiler_water.jpg",
-            "title": "Водоподготовка для Facebook",
-            "text": "Компания EUROWATER поставила и установила станцию очистки воды для системы охлаждения датацентра Facebook в северной части Швеции. Нажмите, чтоб узнать больше о проекте..."
-        },
-        {
-            "id": 5,
-            "img": "img/glasvand.jpg",
-            "title": "Водоподготовка для Facebook",
-            "text": "Наше оборудование для водоподготовки минимизирует влияние недостатков связанных с интенсивной коррозией, образованием накипи, частыми продувками котла и использованием большого"
-        },
-        {
-            "id": 6,
-            "img": "img/Facebook-logo.jpg",
-            "title": "Водоподготовка для Facebook",
-            "text": "Компания EUROWATER поставила и установила станцию очистки воды для системы охлаждения датацентра Facebook в северной части Швеции. Нажмите, чтоб узнать больше о проекте..."
-        }
-    ]
 
 @Component({
     selector: 'main',
-    templateUrl: 'app/pages/main.page/mainTpl.html'
+    templateUrl: 'app/pages/main.page/mainTpl.html',
+    providers: [HttpService]
 })
-export class MainPage {
-    block: any[] = blo;
+export class MainPage implements OnInit {
+    block: any[];
+    constructor(private httpService: HttpService) {}
+    ngOnInit() {
+        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+        //Add 'implements OnInit' to the class.
+        this.httpService.getData().subscribe((data) => {
+            console.log('data', data);
+            this.block = data.json().slides
+        });
+    }
+
+   
 }
