@@ -3,11 +3,11 @@ import {AppComponent} from './app.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {MainPage} from './pages/main.page/main.page';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent} from './about/about.component';
-import {RegComponent} from './pages/registration/reg.component';
+import { AboutComponent} from './pages/about/about.component';
+import {RegComponent} from './CMS/registration/reg.component';
 import {BasicComponent} from './pages/basic/basic.component';
-import {NewsComponent} from './pages/add.news/news.component';
-import {PageComponent} from './pages/add.page/page.component';
+import {NewsComponent} from './CMS/add.news/news.component';
+import {PageComponent} from './CMS/add.page/page.component';
 
 const regRote: Routes = [
     {path: '', component: NewsComponent},
