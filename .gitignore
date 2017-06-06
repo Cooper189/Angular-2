@@ -1,4 +1,5 @@
-/release/*
 /.vscode/*
 /node_modules/*
 /common/*
+dist/**.js
+dist/**.html
