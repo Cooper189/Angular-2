@@ -14,8 +14,8 @@ export class MainPage implements OnInit {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
         this.httpService.getData().subscribe((data) => {
-            console.log('data',  data.json().slides);
-            this.block = data.json().slides
+            console.log('data',  data.json());
+            this.block = data.json();
         });
     }
 

@@ -1,1 +1,7 @@
 <h2>Basic News</h2>
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <input type="text" [(ngModel)]="img" name="img" placeholder="img">
+    <input type="text" [(ngModel)]="title" name="title" placeholder="title">
+    <textarea [(ngModel)]="text" name="text"></textarea>
+    <button type="submit">Send</button>
+</form>

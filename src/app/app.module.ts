@@ -8,7 +8,8 @@ import {RegComponent} from './CMS/registration/reg.component';
 import {BasicComponent} from './pages/basic/basic.component';
 import {NewsComponent} from './CMS/add.news/news.component';
 import {PageComponent} from './CMS/add.page/page.component';
-import { HttpModule} from '@angular/http'
+import { HttpModule} from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 const regRote: Routes = [
     {path: '', component: NewsComponent},
@@ -26,7 +27,7 @@ const route: Routes = [
 
 
 @NgModule({
-    imports: [BrowserModule, RouterModule.forRoot(route), HttpModule],
+    imports: [BrowserModule, RouterModule.forRoot(route), HttpModule, FormsModule],
     declarations: [AppComponent, MainPage, AboutComponent, BasicComponent, RegComponent, NewsComponent,PageComponent],
     bootstrap: [AppComponent]
 })
