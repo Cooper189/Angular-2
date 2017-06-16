@@ -14,18 +14,13 @@ class News {
     providers: [HttpService]
 })
 export class NewsComponent {
-    news:News;
-    img:string;
-    title:string;
-    text:string;
+
+    news: News = new News;
+
     constructor(private httpService: HttpService) {}
+    
     onSubmit() {
-        this.news = {
-            img: this.img,
-            title: this.title,
-            text: this.text
-        }
-        console.log(this.news);
+        console.log(this);
         this.httpService.sendNews(this.news).subscribe((data) => {
             console.log(data)
         });

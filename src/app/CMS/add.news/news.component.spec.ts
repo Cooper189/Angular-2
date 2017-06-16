@@ -28,9 +28,11 @@ beforeEach(async(() => {
   .compileComponents().then(() => {
     const fixture = TestBed.createComponent(NewsComponent);
     component = fixture.componentInstance;
-    component.img ='pictur';
-    component.title ='Main title';
-    component.text ='disription';
+    component.news = {
+      img:'pictur',
+      title:'Main title',
+      text:'disription'
+    }
     component.onSubmit()
   });
 }));
