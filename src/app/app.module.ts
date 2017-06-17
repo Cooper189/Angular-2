@@ -10,6 +10,7 @@ import {NewsComponent} from './CMS/add.news/news.component';
 import {PageComponent} from './CMS/add.page/page.component';
 import { HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import {NewsApp} from './pages/news/news.app.component'
 
 const regRote: Routes = [
     {path: '', component: NewsComponent},
@@ -28,7 +29,7 @@ const route: Routes = [
 
 @NgModule({
     imports: [BrowserModule, RouterModule.forRoot(route), HttpModule, FormsModule],
-    declarations: [AppComponent, MainPage, AboutComponent, BasicComponent, RegComponent, NewsComponent,PageComponent],
+    declarations: [AppComponent, MainPage, AboutComponent, BasicComponent, RegComponent, NewsComponent,PageComponent,NewsApp],
     bootstrap: [AppComponent]
 })
 export class AppModule {

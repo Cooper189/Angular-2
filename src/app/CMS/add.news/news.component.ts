@@ -21,7 +21,7 @@ export class NewsComponent {
     
     onSubmit() {
         console.log(this);
-        this.httpService.sendNews(this.news).subscribe((data) => {
+        this.httpService.sendNews(this.news, 'api/main').subscribe((data) => {
             console.log(data)
         });
     }

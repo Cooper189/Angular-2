@@ -7,17 +7,17 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HttpService {
     constructor(private http: Http) {}
-    public getData() {
+    public getData(url) {
         let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
-       return this.http.get('api/main', {headers:headers}).map((resp: Response) => {
+       return this.http.get(url, {headers:headers}).map((resp: Response) => {
            return resp;
        })
     };
-    public sendNews(data) {
+    public sendNews(data, url) {
         const body = JSON.stringify(data);
         console.log('data', body)
         let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
-        return this.http.post('api/main', body, {headers:headers}).map((resp: Response) => {
+        return this.http.post(url, body, {headers:headers}).map((resp: Response) => {
            return resp;
        })
     }

@@ -25,7 +25,8 @@ var Images = new Schema({
     url: { type: String, required: true }
 });
 
-var Article = new Schema({
+var News = new Schema({
+    year: {type: String, required: true},
     img: {type: String, required: true},
     title: { type: String, required: true },
     text: { type: String, required: true}
@@ -42,5 +43,8 @@ var newArticle = new Schema({
 // });
 
 var ArticleModel = mongoose.model('newArticle', newArticle);
+var NewsModel = mongoose.model('News', News);
+
 
 module.exports.ArticleModel = ArticleModel;
+module.exports.NewsModel = NewsModel;
